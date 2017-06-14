@@ -19,6 +19,10 @@ export default class Node {
         }
     }
 
+    getDepth() {
+        return 1 + Math.max(this.left.getDepth(), this.right.getDepth());
+    }
+
     toString() {
         return (
             this.left.toString() +
@@ -37,5 +41,9 @@ export class Leaf {
 
     toString() {
         return '';
+    }
+
+    getDepth() {
+        return 0;
     }
 }
